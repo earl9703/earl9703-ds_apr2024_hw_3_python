@@ -48,27 +48,24 @@ with open(csvpath, encoding='UTF-8') as csvfile:
             # reset last month profit
             last_month_profit = int(row[1])
 
-
-print(month_count)
-print(total_profit)
-print(len(changes))
+print("Financial Analysis")
+print(f"Total Months: {month_count}")
+print(f"Total Profit: {total_profit}")
 
 avg_change = sum(changes) / len(changes)
-print(avg_change)
+print(f"Average Change: {avg_change}")
 
 max_change = max(changes)
 max_month_index = changes.index(max_change)
 max_month = month_changes[max_month_index]
 
-print(max_change)
-print(max_month)
+print(f"Greatest Increase in Profits: {max_change} on {max_month}")
 
 min_change = min(changes)
 min_month_index = changes.index(min_change)
 min_month = month_changes[min_month_index]
 
-print(min_change)
-print(min_month)
+print(f"Greatest Decrease in Profits: {min_change} on {min_month}")
 
 
 with open("Pybank.txt", "w") as file:
