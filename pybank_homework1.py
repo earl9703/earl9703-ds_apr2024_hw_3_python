@@ -2,7 +2,7 @@
 import csv
 
 # Set path for file
-csvpath = "budget_data.csv"
+csvpath = "budget_data.csv" 
 
 # variable
 month_count = 0
@@ -69,3 +69,12 @@ min_month = month_changes[min_month_index]
 
 print(min_change)
 print(min_month)
+
+
+with open("Pybank.txt", "w") as file:
+    file.write(f"Financial Analysis\n")
+    file.write(f"Total Months: {month_count}\n")
+    file.write(f"Total Profit: {total_profit}\n")
+    file.write(f"Average Change: {avg_change}\n")
+    file.write(f"Greatest Increase in Profits: {max_change} on {max_month}\n")
+    file.write(f"Greatest Decrease in Profits: {min_change} on {min_month}\n")
